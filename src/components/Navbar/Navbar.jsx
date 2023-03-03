@@ -14,11 +14,10 @@ const Navbar = () => {
         <li className={classes.navbar__navLinkContainer__navItems}>About Us</li>
         <li className={classes.navbar__navLinkContainer__navItems}>Team</li>
         <li className={classes.navbar__navLinkContainer__navItems}>Contact Us</li>
-        <li className={classes.navbar__navLinkContainer__navItems}>Help</li>
       </div>
       <div className={classes.navbar__btnContainer}>
-        <Button variant='secondary' size='small'>Log in</Button>
-        <Button variant='primary' size='small'>Sign Up</Button>
+        <Button variant='secondary' size='large'>View Customers</Button>
+        <Button variant='primary' size='large'>Transaction history</Button>
       </div>
     </nav>
   )

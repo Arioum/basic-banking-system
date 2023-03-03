@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import classes from './button.module.scss'
 
 const BUTTON_STYLE = {
@@ -8,9 +9,15 @@ const BUTTON_STYLE = {
   medium: 'btnMedium'
 }
 
-const Button = ({ children, variant, size }) => {
+const Button = ({ children, variant, size, link, dest }) => {
+
+  if (!link) {
+    return (
+      <button className={`${classes.button} ${classes[BUTTON_STYLE[variant]]} ${classes[BUTTON_STYLE[size]]}`}>{children}</button>
+    )
+  }
   return (
-    <button className={`${classes.button} ${classes[BUTTON_STYLE[variant]]} ${classes[BUTTON_STYLE[size]]}`}>{children}</button>
+    <Link to={dest} className={`${classes.button} ${classes[BUTTON_STYLE[variant]]} ${classes[BUTTON_STYLE[size]]}`}>{children}</Link>
   )
 }
 
