@@ -1,0 +1,41 @@
+.button {
+  height: 2.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btnPrimary {
+  color: #000;
+  background-color: #4DFA92;
+
+  &:hover {
+    background-color: #4dfa92db;
+  }
+}
+
+.btnSecondary {
+  color: #000;
+  background-color: #FFF;
+
+  &:hover {
+    background-color: #ffffffdb;
+  }
+}
+
+.btnSmall{
+  padding: 0 1em;
+  width: 6em;
+}
+
+.btnMedium {
+  padding: 0 2em;
+  max-width: fit-content;
+}
+
+.btnLarge {
+  padding: 0 3em;
+  max-width: fit-content;
+}

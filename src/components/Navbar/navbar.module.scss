@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__navLinkContainer {
+    font-size: 1rem;
+    font-weight: 500;
+    display: inherit;
+    list-style: none;
+    gap: 2em;
+
+    &__navItems:hover {
+      color: #498713;
+      cursor: pointer;
+    }
+  }
+
+  &__btnContainer {
+    display: flex;
+    gap: 2em;
+  }
+
+}
