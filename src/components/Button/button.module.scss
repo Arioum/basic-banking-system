@@ -1,5 +1,4 @@
 .button {
-  height: 2.5em;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -8,26 +7,28 @@
 }
 
 .btnPrimary {
-  color: #000;
-  background-color: #4DFA92;
+  color: #fff;
+  background-color: #202020;
 
   &:hover {
-    background-color: #4dfa92db;
+    background-color: #202020db;
   }
 }
 
 .btnSecondary {
   color: #000;
   background-color: #FFF;
+  outline: 1px solid #000;
+  outline-offset: -1px;
 
   &:hover {
     background-color: #ffffffdb;
   }
 }
 
-.btnSmall{
-  padding: 0 1em;
-  width: 6em;
+.btnSmall {
+  padding: .8em;
+  max-width: fit-content
 }
 
 .btnMedium {
@@ -36,6 +37,6 @@
 }
 
 .btnLarge {
-  padding: 0 3em;
+  padding: 1em 3em;
   max-width: fit-content;
 }

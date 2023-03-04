@@ -1,0 +1,11 @@
+section {
+  background-color: #fff;
+
+  &>table {
+    width: 100%;
+
+    &>tr {
+      margin: 3em 0;
+    }
+  }
+}

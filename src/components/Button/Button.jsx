@@ -6,7 +6,8 @@ const BUTTON_STYLE = {
   primary: 'btnPrimary',
   secondary: 'btnSecondary',
   small: 'btnSmall',
-  medium: 'btnMedium'
+  medium: 'btnMedium',
+  large: 'btnLarge'
 }
 
 const Button = ({ children, variant, size, link, dest }) => {
