@@ -7,7 +7,7 @@ const Home = () => {
     <header>
       <h1>Banking Made Simple</h1>
       <div className="btn-container">
-        <Button variant='primary' size='large' link={true} dest="/">View all Customers</Button>
+        <Button variant='primary' size='large' link={true} dest="/all-customers">View all Customers</Button>
         <Button variant='secondary' size='large' link={true} dest="/transactions">Transaction History</Button>
       </div>
     </header>
