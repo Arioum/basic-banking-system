@@ -11,6 +11,6 @@ app.get("/api/all-customers", (req, res) => {
   res.json({ body: "Hello World" + Date.now() });
 });
 
-if (port) app.listen(port);
+if (process.env.API_PORT) app.listen(process.env.API_PORT);
 
 module.exports = app;
