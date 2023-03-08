@@ -15,7 +15,7 @@ const CustomersList = () => {
 
   return (
     <section>
-      <h1>customers</h1>
+      <h1>Customers</h1>
       {/* {customers.map((customer) => {
         <div className="" key={customer._id}>
             <p>{customer.id}</p>
