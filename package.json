@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "nodemon ./server/app.cjs"
+    "server": "nodemon ./api/app.cjs"
   },
   "dependencies": {
     "cors": "^2.8.5",
