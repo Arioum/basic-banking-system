@@ -7,7 +7,7 @@ const port = process.env.API_PORT || 4000;
 
 app.use(cors());
 
-app.get("/all-customers", (req, res) => {
+app.get("/api/all-customers", (req, res) => {
   res.json({ body: "Hello World" + Date.now() });
 });
 
