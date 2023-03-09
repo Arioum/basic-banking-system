@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 import React from 'react'
 
 const CustomersList = () => {
-  const [customers, setCustomers] = useState('')
+  const [customers, setCustomers] = useState([])
 
   useEffect(() => {
     async function getCustomers() {
-      const response = await fetch(`${import.meta.env.VITE_REACT_API_URL}/all-customers`);
+      const response = await fetch(`${import.meta.env.VITE_REACT_API_URL}/customers`);
       const responseJson = await response.json();
-      setCustomers(responseJson.body);
+      setCustomers(responseJson);
     }
     getCustomers()
   }, [])
@@ -16,17 +16,15 @@ const CustomersList = () => {
   return (
     <section>
       <h1>Customers</h1>
-      {/* {customers.map((customer) => {
-        <div className="" key={customer._id}>
-            <p>{customer.id}</p>
+      {customers.map((customer) => {
+        return (
+          <div className="customer-item" key={customer._id}>
             <p>{customer.name}</p>
             <p>{customer.email}</p>
+            <p>{customer.balance}</p>
           </div>
-        return (
-          <p>{customers.body}</p>
         )
-      })} */}
-      <p>{customers}</p>
+      })}
     </section>
   )
 }
