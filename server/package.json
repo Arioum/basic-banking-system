@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app.cjs"
+    "start": "nodemon app.cjs",
+    "build": "yarn install"
   },
   "dependencies": {
     "cors": "^2.8.5",
