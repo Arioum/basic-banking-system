@@ -1,20 +1,18 @@
-const express = require("express");
 require("dotenv").config();
+const express = require("express");
 const mongoose = require("mongoose");
 const http = require("http");
 const cors = require("cors");
+const routes = require("./routes/all.js");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use("/api/v1", routes);
 
 const port = process.env.PORT || 4000;
-
-app.get("/all-customers", (req, res) => {
-  res.json({ body: "Hello World" + Date.now() });
-});
 
 const server = http.createServer(app);
 
