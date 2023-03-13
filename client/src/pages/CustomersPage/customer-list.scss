@@ -1,0 +1,76 @@
+.customer-list-section {
+
+  &>h1 {
+    padding: .8em 0;
+  }
+
+  &>table {
+
+    &>tr {
+
+      &>.th1-ac-no {
+        position: relative;
+        right: 80px;
+      }
+
+      &>.th2-name {
+        position: relative;
+        right: 20px;
+      }
+
+      &>.th3-email {
+        position: relative;
+        left: 60px;
+      }
+
+      &>.th4-ac-bal {
+        position: relative;
+        right: 10px;
+      }
+    }
+  }
+
+  &>.table-data-container {
+    overflow: scroll;
+    height: calc((100vh - 110px) * .8);
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: #eee;
+      width: 5px;
+      border-radius: 50px;
+    }
+
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #d4d4d4;
+      width: 5px;
+      border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
+
+
+    &>table {
+      width: 100%;
+      text-align: left;
+      padding: 0 2em;
+
+      &>tr {
+        position: relative;
+        top: -50px;
+
+        &>* {
+          padding: 1em 0;
+        }
+      }
+    }
+  }
+}
