@@ -1,13 +1,22 @@
-import React from 'react'
-import { Navigate, NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import Button from '../../components/Button/Button'
 import Logo from '../../assets/logo.svg'
 import classes from './navbar.module.scss'
 
 const Navbar = () => {
+  const [routeParams, setRouteParams] = useState('');
+  let { param } = useParams();
+  console.log(param);
+  const navigate = useNavigate();
+
   const homeRedirect = () => {
-    Navigate('/')
+    navigate('/')
   }
+
+  useEffect(() => {
+    setRouteParams(param)
+  }, [param])
 
   return (
     <nav className={classes.navbar}>
@@ -21,8 +30,12 @@ const Navbar = () => {
         <li className={classes.navbar__navLinkContainer__navItems}>Contact Us</li>
       </div>
       <div className={classes.navbar__btnContainer}>
-        <Button variant='secondary' size='small'>View Customers</Button>
-        <Button variant='primary' size='small'>Transaction history</Button>
+        {routeParams === "all-customers" ? (
+          <Button variant='primary' size='small' link={true} dest="/transactions">Transaction history</Button>
+        ) : (
+          <Button variant='secondary' size='small' link={true} dest="/all-customers">View Customers</Button>
+        )}
+        <Button variant='primary' size='small' link={true} dest="/transactions">Transfer Money</Button>
       </div>
     </nav>
   )

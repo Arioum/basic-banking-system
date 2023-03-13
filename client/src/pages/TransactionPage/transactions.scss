@@ -1,5 +1,8 @@
 section {
   background-color: #fff;
+  border-radius: 1em;
+  margin-top: 2em;
+  height: calc((100vh - 110px) * .99);
 
   &>table {
     width: 100%;

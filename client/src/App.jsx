@@ -10,8 +10,8 @@ import './App.css'
 const App = () => {
   return (
     <div>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/all-customers' element={<CustomersList />} />
