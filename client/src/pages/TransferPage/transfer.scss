@@ -1,0 +1,26 @@
+.transfer-section {
+
+  &>h1 {
+    padding: .8em 0;
+  }
+
+  &>form {
+    padding: 2em;
+
+    &>.from-to-section {
+      display: flex;
+
+      &>.from-section,
+      &>.to-section {
+        &>input[type="email"] {
+          padding: 1em;
+          font-size: 1rem;
+          font-weight: 600;
+          border-radius: .4em;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}
