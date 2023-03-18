@@ -5,7 +5,7 @@ const { getTransactions, createTransactions } = require("../controllers/transact
 
 router.get("/customers", getCustomers);
 
+router.post("/new-transfer", createTransactions);
 router.get("/transactions", getTransactions);
-router.post("/transfer", createTransactions);
 
 module.exports = router;
