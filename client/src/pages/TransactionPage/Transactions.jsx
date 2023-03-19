@@ -10,7 +10,7 @@ const Transactions = () => {
       const response = await fetch(`${import.meta.env.VITE_REACT_API_URL}/transactions`);
       const responseJson = await response.json();
       if (responseJson !== transactions)
-        setTransactions('');
+        setTransactions(responseJson);
     }
     getTransactions()
   }, [])
@@ -21,11 +21,11 @@ const Transactions = () => {
         <h1>Transaction History</h1>
         <table>
           <tr>
-            <th>Transaction ID</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Transaction Type</th>
-            <th>Amount</th>
+            <th className='th1'>Transaction ID</th>
+            <th className='th2'>Date & Time</th>
+            <th className='th3'>From</th>
+            <th className='th4'>To</th>
+            <th className='th5'>Amount</th>
           </tr>
         </table>
 
@@ -33,9 +33,9 @@ const Transactions = () => {
           <table>
             <tr>
               <th>Transaction ID</th>
+              <th>Date & Time</th>
               <th>From</th>
               <th>To</th>
-              <th>Transaction Type</th>
               <th>Amount</th>
             </tr>
             {!transactions ? (

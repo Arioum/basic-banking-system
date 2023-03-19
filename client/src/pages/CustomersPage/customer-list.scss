@@ -1,10 +1,15 @@
 .customer-list-section {
+  background-color: #fff;
+  border-radius: 1em;
+  margin-top: 2em;
+  height: calc((100vh - 110px) * .99);
 
   &>h1 {
     padding: .8em 0;
   }
 
   &>table {
+    width: 100%;
 
     &>tr {
 
