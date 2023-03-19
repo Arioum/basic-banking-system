@@ -3,24 +3,27 @@ const Customer = require("../models/customers");
 
 const createTransactions = async (req, res) => {
   const { from, to, amount } = req.body;
-  const transaction = new Transaction({
-    from,
-    to,
-    amount,
-  });
+  const transaction = new Transaction({ from, to, amount });
 
   try {
-    await Customer.find({ email: transaction.from }).then(
-      async (fromResult) => {
-        await Customer.find({ email: transaction.to }).then((toResult) => {
-          if (fromResult.balance > amount)
-            return fromResult.balance - amount && toResult + amount;
-          else res.status(302).json({ message: "Insufficient balance" });
-        });
-      }
-    );
-  } catch (err) {}
-
+    await Customer.find({ email: from }).then(async (fromResult) => {
+      console.log(fromResult[0].balance);
+      if (fromResult[0].balance > amount)
+        await Customer.findOneAndUpdate(
+          { email: transaction.from },
+          { balance: fromResult[0].balance - amount }
+        );
+      else res.status(302).json({ message: "Insufficient balance" });
+    });
+    await Customer.find({ email: to }).then(async (toResult) => {
+      await Customer.findOneAndUpdate(
+        { email: transaction.to },
+        { balance: toResult[0].balance + Number(amount) }
+      );
+    });
+  } catch (err) {
+    console.log("error");
+  }
   transaction
     .save()
     .then((result) => {

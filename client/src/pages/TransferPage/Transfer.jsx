@@ -8,6 +8,7 @@ const Transfer = () => {
     to: '',
     amount: '',
   })
+  const [transactionResponse, setTransactionResponse] = useState([])
 
   console.log(transferDetails);
 
@@ -22,16 +23,14 @@ const Transfer = () => {
       method: 'POST',
       data: transferDetails,
       headers: {
-        // 'Authorization': `bearer ${token}`,
         'Content-Type': 'application/json'
       }
-    }).then((res) => res.data)
+    }).then((res) => setTransactionResponse(res.data))
+      .then((res) => console.log(res))
       .catch((err) => console.log(err))
-
-    // axios.post(`${import.meta.env.VITE_REACT_API_URL}/new-transfer`, transferDetails)
-    //   .then((res) => res.data)
-    //   .catch((err) => console.log(err))
+    resetFields()
   }
+  console.log(transactionResponse);
 
   const resetFields = () => {
     setTransferDetails({
@@ -59,7 +58,8 @@ const Transfer = () => {
           <label htmlFor="amount">Amount to be transfered</label>
           <input type="number" name="amount" id="amount" onChange={inputHandler} />
         </div>
-        <div className="">
+        {transactionResponse && <h3>{transactionResponse.message}</h3>}
+        <div className="form-btn-container">
           <button type="reset" onClick={resetFields}>Reset</button>
           <button type="submit">Confirm Transfer</button>
         </div>

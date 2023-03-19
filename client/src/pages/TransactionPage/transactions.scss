@@ -1,4 +1,4 @@
-section {
+.transaction-page {
   background-color: #fff;
   border-radius: 1em;
   margin-top: 2em;
@@ -13,6 +13,74 @@ section {
 
     &>tr {
       margin: 3em 0;
+
+      &>.th1 {
+        position: relative;
+        right: 100px;
+      }
+
+      &>.th2 {
+        position: relative;
+        right: 130px;
+      }
+
+      &>.th3 {
+        position: relative;
+        right: 145px;
+      }
+
+      &>.th4 {
+        position: relative;
+        right: 75px;
+      }
+
+      &>.th5 {
+        
+      }
+    }
+  }
+
+  &>.table-data-container {
+    overflow: scroll;
+    height: calc((100vh - 110px) * .8);
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: #eee;
+      width: 5px;
+      border-radius: 50px;
+    }
+
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #d4d4d4;
+      width: 5px;
+      border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
+
+
+    &>table {
+      width: 100%;
+      text-align: left;
+      padding: 0 2em;
+
+      &>tr {
+        position: relative;
+        top: -50px;
+
+        &>* {
+          padding: 1em 0;
+        }
+      }
     }
   }
 }

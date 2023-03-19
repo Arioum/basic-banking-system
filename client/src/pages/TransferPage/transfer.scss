@@ -1,4 +1,8 @@
 .transfer-section {
+  background-color: #fff;
+  border-radius: 1em;
+  margin-top: 2em;
+  height: calc((100vh - 110px) * .99);
 
   &>h1 {
     padding: .8em 0;
@@ -9,6 +13,7 @@
 
     &>.from-to-section {
       display: flex;
+      justify-content: space-around;
 
       &>.from-section,
       &>.to-section {
@@ -21,6 +26,70 @@
           outline: none;
         }
       }
+
+      &>.from-section,
+      &>.to-section {
+
+        &>label {
+          display: block;
+          font-size: 1.4rem;
+          font-weight: 600;
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    &>.amount-section {
+      margin-top: 3em;
+
+      &>input[type="number"] {
+        padding: 1em;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: .4em;
+        border: none;
+        outline: none;
+      }
+
+      &>label {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 1em;
+      }
+    }
+
+    &>.form-btn-container {
+      margin-top: 3em;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+
+      &>button[type="reset"],
+      &>button[type="submit"] {
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: .8em 1.6em;
+        border: 0;
+        outline: 0;
+        border-radius: 5px;
+      }
+
+      &>button[type="reset"] {
+        background-color: #ce1515;
+      }
+
+      &>button[type="submit"] {
+        background-color: #00bb00;
+      }
+
+    }
+
+    &>h3 {
+      background-color: #57e4579a;
+      display: inline-block;
+      margin-top: 2em;
+      height: 50px;
     }
   }
 }
