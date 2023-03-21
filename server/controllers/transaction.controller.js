@@ -7,7 +7,6 @@ const createTransactions = async (req, res) => {
 
   try {
     await Customer.find({ email: from }).then(async (fromResult) => {
-      console.log(fromResult[0].balance);
       if (fromResult[0].balance > amount)
         await Customer.findOneAndUpdate(
           { email: transaction.from },
@@ -27,7 +26,6 @@ const createTransactions = async (req, res) => {
   transaction
     .save()
     .then((result) => {
-      console.log("Saved transaction", result);
       res.status(201).json({
         message: "Transfer request success",
         createdTransaction: result,

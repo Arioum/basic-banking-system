@@ -1,1 +1,17 @@
-.customer-list-item {}
+.modal-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .6em;
+
+  &>button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .8em 1em;
+    margin-top: 2em;
+    background-color: #202020;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+}
